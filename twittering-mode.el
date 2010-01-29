@@ -921,6 +921,34 @@ Return nil if STR is invalid as a timeline spec."
       (define-key km "q" 'twittering-suspend)
       nil))
 
+(unless (boundp 'twittering-menu)
+   (easy-menu-define
+     twittering-menu twittering-mode-map ""
+     `("Twitter"
+       ["Friends Timeline" twittering-friends-timeline t]
+       ["Replies Timeline" twittering-replies-timeline t]
+       ["Public Timeline"  twittering-public-timelinet t]
+       ["User Timeline" twittering-user-timeline t]
+       ["Update Status Interactive" twittering-update-status-interactive t]
+       ["Erase Old Statuses" twittering-erase-old-statuses t]
+       ["Retweet" twittering-retweet t]
+       ["Set Current Hashtag" twittering-set-current-hashtag t]
+       ["Enter" twittering-enter t]
+       ["Update Lambda" twittering-update-lambda t]
+       ["View User Page" twittering-view-user-page t]
+       ["Current Timeline" twittering-current-timeline t]
+       ["Direct Message" twittering-direct-message t]
+       ["Other User Timeline" twittering-other-user-timeline t]
+       ["Other User Timeline Interactive" twittering-other-user-timeline-interactive t]
+       ["Other User List Interactive" twittering-other-user-list-interactive t]
+       ["Goto Next Status" twittering-goto-next-status t]
+       ["Goto Previous Status" twittering-goto-previous-status t]
+       ["Goto Next Status Of User" twittering-goto-next-status-of-user t]
+       ["Goto Previous Status Of User" twittering-goto-previous-status-of-user t]
+       ["Goto Next Thing" twittering-goto-next-thing t]
+       ["Goto Previous Thing" twittering-goto-previous-thing t]
+       ["Icon Mode" twittering-icon-mode t] )))
+
 (defun twittering-keybind-message ()
   (let ((important-commands
 	 '(("Timeline" . twittering-friends-timeline)
